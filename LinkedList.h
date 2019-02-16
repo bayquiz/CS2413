@@ -1,38 +1,37 @@
 //#include <string>
 
 class Node {
-	int data;
-	Node *next;
+	int datum;
+	Node *next, *prev;		//pointer to node. Self referential (refers to itself inside itself
 
 public:
 	//constructor
 	Node(int);
 	//destructor
 	~Node();
-
-	//accessors and mutators
-	int get_data();
-	void set_data(int);
+	//getters and setters
+	int get_datum();
+	void set_datum(int);		//change what datum is
 	Node* get_next();
-	void set_next(Node*);			//needs node pointer so it knows where to set after
+	void set_next(Node*);		//needs a node pointer so it knows which to insert after. change what next is
+	Node* get_prev();
+	void set_prev(Node*);
 };
+
 
 class LinkedList {
 	int size;
 	Node *head;
-	
-public:
-	//constructor
+	Node *tail;		//dont we need a tail
+public: 
 	LinkedList();
-	//destructor and helper
+	//LinkedList(int);
 	~LinkedList();
 	void destr_helper(Node*);
-
-	//functions
-	int get(int);					//returns index data
-	void set(int, int);				//set data at an index
-	void insert(int, int);			//insert data at position
-	int remov(int);
+	int get(int);
+	void set(int, int);
+	void insert(int, int);
+	int rem(int);
 	void print_list();
 	void back_print();
 };

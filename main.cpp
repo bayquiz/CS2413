@@ -1,33 +1,39 @@
 #include "LinkedList.h"
-#include <iostream>
 using namespace std;
+#include <iostream>
 
 int main() {
 
-	LinkedList *list =  new LinkedList;
+	LinkedList *mylist = new LinkedList;		//create list pointer using default constructor
 	
-	list->insert(0, 1);
-	list->print_list();
+	mylist->print_list();				//should be nothing in list
 	
-	list->insert(1, 2);
-	list->print_list();
-
-	list->insert(2, 3);
-	list->print_list();
-
-	list->insert(3, 4);
-	list->print_list();
-
-	list->insert(4, 5);
-	list->print_list();
+	mylist->insert(0, 1);
+	mylist->print_list();
+	mylist->insert(1, 2);
+	mylist->print_list();
+	mylist->insert(2, 3);
+	mylist->print_list();
 
 	cout << "printing backwards" << endl;
-	list->back_print();
+	mylist->back_print();
 
-	cout << "Removing the last element... " << list->remov(4) << endl;
-	list->print_list();
+//	cout << mylist->rem(1) << "was removed \n" << endl;
+/*	mylist->print_list();
+	try {
+		mylist->insert(25, 26);
+	}
+	catch (const char *msg) {
+		cout << msg << endl;
+	}
 
+	mylist->insert(2, 4);
+	mylist->print_list();
+	cout << mylist->rem(2) << " was removed \n" << endl;
+	mylist->print_list();
 
+	//mylist->back_print();
+*/
 
 
 	return 0;
