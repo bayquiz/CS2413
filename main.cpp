@@ -1,40 +1,16 @@
-#include "LinkedList.h"
-using namespace std;
-#include <iostream>
+#include "dijk.h"
 
-int main() {
+int main()
+{
+	// Let us create the example 
+	// graph discussed above 
+	int graph[V][V] = { {0, 8, 22, 0},
+					    {8, 0, 7, 15},
+						{22, 7, 0, 18},
+						{0, 15, 18, 0},
 
-	LinkedList *mylist = new LinkedList;		//create list pointer using default constructor
-	
-	mylist->print_list();				//should be nothing in list
-	
-	mylist->insert(0, 1);
-	mylist->print_list();
-	mylist->insert(1, 2);
-	mylist->print_list();
-	mylist->insert(2, 3);
-	mylist->print_list();
+	};
 
-	cout << "printing backwards" << endl;
-	mylist->back_print();
-
-//	cout << mylist->rem(1) << "was removed \n" << endl;
-/*	mylist->print_list();
-	try {
-		mylist->insert(25, 26);
-	}
-	catch (const char *msg) {
-		cout << msg << endl;
-	}
-
-	mylist->insert(2, 4);
-	mylist->print_list();
-	cout << mylist->rem(2) << " was removed \n" << endl;
-	mylist->print_list();
-
-	//mylist->back_print();
-*/
-
-
+	dijkstra(graph, 0);
 	return 0;
 }
